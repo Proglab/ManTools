@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ManTools2020.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--lie css et js-->
+    <link rel="stylesheet" href="css/normalize.css" /> 
+    <link rel="stylesheet" href="css/foundation.css" /> 
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="Scripts/vendor/modernizr.js"></script>
+    
+</head>
+<body>
+    <br />
+<div class="row">
+    <form id="form1" runat="server">          
+            <asp:Menu ID="Menu1" runat="server" class="top-bar" Orientation="Horizontal" StaticSubMenuIndent="10px" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" Width="100%">
+                <DynamicHoverStyle BackColor="#284E98" ForeColor="White"></DynamicHoverStyle>
+
+                <DynamicMenuItemStyle HorizontalPadding="50px" VerticalPadding="2px"></DynamicMenuItemStyle>
+
+                <DynamicMenuStyle BackColor="#B5C7DE"></DynamicMenuStyle>
+
+                <DynamicSelectedStyle BackColor="#507CD1"></DynamicSelectedStyle>
+                <DynamicItemTemplate>
+                    <%# Eval("Text") %>
+                </DynamicItemTemplate>
+                <Items>
+                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/default.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Familles/Families" Value="Famillesmenu" NavigateUrl="~/Famille.aspx"></asp:MenuItem>                  
+                    <asp:MenuItem Text="Outils/Gereedschappen" Value="Outils">
+                        <asp:MenuItem NavigateUrl="~/Outils.aspx" Text="Consulter/Raadplegen" Value="Consulter"></asp:MenuItem>
+                        <asp:MenuItem Text="Transfert" Value="Transfert" NavigateUrl="~/Transfert.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Controles" Value="Controles" NavigateUrl="~/Controles.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Etalonnages / Ijkingen" Value="Verifications" NavigateUrl="~/Verif.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Imputations/Imputaties" Value="Imputations" NavigateUrl="~/Imputations.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Rapports" Value="Rapport" NavigateUrl="#">
+                        <asp:MenuItem Text="Facturation/Facturatie" Value="Facturation" NavigateUrl="~/Facturation.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ControlReporting.aspx" Text="ControlReporting" Value="ControlReporting"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/CalibrageReporting.aspx" Text="CalibrageReporting" Value="CalibrageReporting"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Logout" Value="Se déconnecter" NavigateUrl="~/deco.aspx"></asp:MenuItem>
+                </Items>
+                <LevelMenuItemStyles>
+                    <asp:MenuItemStyle Font-Underline="False" />
+                </LevelMenuItemStyles>
+                <StaticHoverStyle BackColor="#284E98" ForeColor="White"></StaticHoverStyle>
+
+                <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="10px"></StaticMenuItemStyle>
+
+                <StaticSelectedStyle BackColor="#507CD1"></StaticSelectedStyle>
+            </asp:Menu>
+        
+      
+    
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+    <script src="Scripts/vendor/jquery.js"></script>
+    <script src="Scripts/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>   
+    </form>
+</div>
+    
+</body>
+</html>
