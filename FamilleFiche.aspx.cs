@@ -44,7 +44,7 @@ namespace ManTools2020
                         SsFamFR.Enabled = false;
                         DescrSsFamNl.Enabled = false;
                         Taux.Enabled = false;
-                        Ctrl.Enabled = false;
+                        //Ctrl.Enabled = false;
                         CheckQuantifiable.Enabled = false;*/
                         Ajout.Visible = false;
                         EnregistrerAjout.Visible = false;
@@ -94,7 +94,7 @@ namespace ManTools2020
                     SsFamFR.Text = row["Descr_Ss_F_FR"].ToString();
                     DescrSsFamNl.Text = row["Descr_Ss_F_NL"].ToString();
                     Taux.Text = row["Taux"].ToString();
-                    Ctrl.Text = row["Ctr"].ToString();
+                    //Ctrl.Text = row["Ctr"].ToString();
                     //CheckQuantifiable.Checked = (bool)row["Quantifiable"];
 
                     //Gestion des boutons de commande
@@ -115,7 +115,7 @@ namespace ManTools2020
             SsFamFR.Enabled = true;
             DescrSsFamNl.Enabled = true;
             Taux.Enabled = true;
-            Ctrl.Enabled = true;
+            //Ctrl.Enabled = true;
             CheckQuantifiable.Enabled = true;
 
             //Gestion des boutons
@@ -175,7 +175,7 @@ namespace ManTools2020
                     SsFamFR.Enabled = false;
                     DescrSsFamNl.Enabled = false;
                     Taux.Enabled = false;
-                    Ctrl.Enabled = false;
+                    //Ctrl.Enabled = false;
                     CheckQuantifiable.Enabled = false;
 
                     //Gestion des boutons
@@ -232,7 +232,7 @@ namespace ManTools2020
                     SsFamFR.Enabled = false;
                     DescrSsFamNl.Enabled = false;
                     Taux.Enabled = false;
-                    Ctrl.Enabled = false;
+                    //Ctrl.Enabled = false;
                     CheckQuantifiable.Enabled = false;
 
                     //Gestion des boutons
@@ -258,11 +258,12 @@ namespace ManTools2020
 
                 //Famille / Sous-famille n'existe pas --> on crée la totale
                 //Création de la famille
-                con.setQuery("INSERT INTO dbo.tblpriFamilles SELECT  @codeFam, @DescrFamFr, @DescrFamNl, @PerCtrl");
+                //con.setQuery("INSERT INTO dbo.tblpriFamilles SELECT  @codeFam, @DescrFamFr, @DescrFamNl, @PerCtrl");
+                con.setQuery("INSERT INTO dbo.tblpriFamilles SELECT  @codeFam, @DescrFamFr, @DescrFamNl");
                 con.setParam("@codeFam", NumFam.Text);
                 con.setParam("@DescrFamFr", DescrFamFr.Text);
                 con.setParam("@DescrFamNl", DescrFamNl.Text);
-                con.setParam("@PerCtrl", Ctrl.Text);
+                //con.setParam("@PerCtrl", Ctrl.Text);
                 con.getExecuteNonQuery();
 
                 //Création de la sous-famille
@@ -293,7 +294,7 @@ namespace ManTools2020
                 SsFamFR.Enabled = false;
                 DescrSsFamNl.Enabled = false;
                 Taux.Enabled = false;
-                Ctrl.Enabled = false;
+                //Ctrl.Enabled = false;
                 CheckQuantifiable.Enabled = false;
 
                 //Gestion des boutons
@@ -333,7 +334,7 @@ namespace ManTools2020
             SsFamFR.Enabled = true;
             DescrSsFamNl.Enabled = true;
             Taux.Enabled = true;
-            Ctrl.Enabled = true;
+            //Ctrl.Enabled = true;
             CheckQuantifiable.Enabled = false;
 
             //Gestion des boutons
@@ -363,12 +364,13 @@ namespace ManTools2020
                 //Gérer l'enregistrement des modifications
                 //Modification au niveau familles
                 Connexion con = Connexion.Instance;
-                con.setQuery("UPDATE tblpriFamilles SET DescriptionFamilleFr = @DESCRIPTION_FR, DescriptionFamilleNl = @DESCRIPTION_NL, PeriodeControle = @PER_CTRL WHERE codeFamille = @famille");
+                //con.setQuery("UPDATE tblpriFamilles SET DescriptionFamilleFr = @DESCRIPTION_FR, DescriptionFamilleNl = @DESCRIPTION_NL, PeriodeControle = @PER_CTRL WHERE codeFamille = @famille");
+                con.setQuery("UPDATE tblpriFamilles SET DescriptionFamilleFr = @DESCRIPTION_FR, DescriptionFamilleNl = @DESCRIPTION_NL WHERE codeFamille = @famille");
                 //con.setQuery("UPDATE Famille SET DESCRIPTION_NL = @DESCRIPTION_NL, PER_CTRL= @PER_CTRL, DESCRIPTION_FR = @DESCRIPTION_FR FROM Famille WHERE famille = @famille");
                 //con.setParam("@DESCRIPTION_NL", DescrFamNl.Text);
                 con.setParam("@DESCRIPTION_FR", DescrFamFr.Text);
                 con.setParam("@DESCRIPTION_NL", DescrFamNl.Text);
-                con.setParam("@PER_CTRL", Ctrl.Text);
+                //con.setParam("@PER_CTRL", Ctrl.Text);
                 con.setParam("@famille", NumFam.Text);
                 con.getExecuteNonQuery();
 
@@ -392,7 +394,7 @@ namespace ManTools2020
                 SsFamFR.Enabled = false;
                 DescrSsFamNl.Enabled = false;
                 Taux.Enabled = false;
-                Ctrl.Enabled = false;
+                //Ctrl.Enabled = false;
                 CheckQuantifiable.Enabled = false;
 
                 //Gestion des boutons
@@ -436,6 +438,11 @@ namespace ManTools2020
         {
             Response.Redirect("FamilleFiche.aspx?id=" + Session["sf"]);
 
+        }
+
+        protected void ViderFiche_Click(object sender, EventArgs e)
+        {
+            
         }
 
         protected void Supprimer_Click(object sender, EventArgs e)

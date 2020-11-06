@@ -57,10 +57,6 @@
                                   <label for="checkbox1">Quantif. / kwant. ?</label>
                                   <asp:CheckBox runat="server" ID="CheckQuantifiable" Enabled="false" />
                               </div>
-                              <div class="large-5 columns">
-                                  <label for="checkbox1">Ctrl ?</label>
-                                  <asp:CheckBox runat="server" ID="Ctrl" Enabled="false" />
-                              </div>
                           </div>                         
                        </fieldset>
                           <div class="row">
