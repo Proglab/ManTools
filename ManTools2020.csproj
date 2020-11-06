@@ -109,6 +109,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CalibrageReporting.aspx" />
+    <Content Include="ControlReporting.aspx" />
+    <Content Include="Facturation.aspx" />
+    <Content Include="Verif.aspx" />
+    <Content Include="Controles.aspx" />
+    <Content Include="OutilFiche.aspx" />
+    <Content Include="Expedition.aspx" />
     <Content Include="Transfert.aspx" />
     <Content Include="Outils.aspx" />
     <Content Include="Imputation.aspx" />
@@ -193,6 +200,55 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connexion.cs" />
+    <Compile Include="CalibrageReporting.aspx.cs">
+      <DependentUpon>CalibrageReporting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalibrageReporting.aspx.designer.cs">
+      <DependentUpon>CalibrageReporting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlReporting.aspx.cs">
+      <DependentUpon>ControlReporting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlReporting.aspx.designer.cs">
+      <DependentUpon>ControlReporting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturation.aspx.cs">
+      <DependentUpon>Facturation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturation.aspx.designer.cs">
+      <DependentUpon>Facturation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Verif.aspx.cs">
+      <DependentUpon>Verif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verif.aspx.designer.cs">
+      <DependentUpon>Verif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles.aspx.cs">
+      <DependentUpon>Controles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles.aspx.designer.cs">
+      <DependentUpon>Controles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OutilFiche.aspx.cs">
+      <DependentUpon>OutilFiche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OutilFiche.aspx.designer.cs">
+      <DependentUpon>OutilFiche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expedition.aspx.cs">
+      <DependentUpon>Expedition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expedition.aspx.designer.cs">
+      <DependentUpon>Expedition.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Transfert.aspx.cs">
       <DependentUpon>Transfert.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
